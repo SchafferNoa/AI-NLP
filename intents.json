@@ -9,14 +9,15 @@
         "Is anyone there?",
         "Hello",
         "Good day",
-        "hi",
-        "howdy"
+        "Hola",
+        "hi"
       ],
       "responses": [
         "Hey :-)",
         "Hello, thanks for visiting",
         "Hi there, what can I do for you?",
-        "Hi there, how can I help?"
+        "Hi there, how can I help?",
+        "hello, what can I do for you?"
       ]
     },
     {
@@ -27,6 +28,7 @@
         "Goodbye",
         "bb",
         "Bye Bye",
+        "thanks, bye",
         "im off",
         "Good night",
         "Goodnight",
@@ -40,6 +42,9 @@
       "responses": [
         "See you later, thanks for visiting",
         "Have a nice day",
+        "see you later aligator",
+        "bye bye",
+        "Good bye, if you need anything else I'll be right here",
         "Bye! Come back again soon."
       ]
     },
@@ -56,6 +61,7 @@
       "responses": [
         "Happy to help!",
         "Any time!",
+        "Your'e welcome :-)",
         "My pleasure",
         "No problem at all!"
       ]
@@ -79,7 +85,7 @@
         "what kind of products do you have"
       ],
       "responses": [
-        "We sell coffee from a wide range of veraity: \n\t House blend - 32nis for 200g of Coffee bean \n\t Ethiopian Blend - 39nis for 200g of Coffee bean \n\t Colombia Blend - 37nis for 200g of Coffee bean"
+        "We sell many kinds of games: \n\t games for your playstation \n\t puzzels \n\t box games \n\t computer games"
       ]
     },
     {
@@ -94,19 +100,17 @@
         "can i pay",
         "payment",
         "payment details",
-        "how to pay",
+        "how can I pay",
         "can i pay with",
         "pay",
         "do you accept cash?",
-        "what do you accept",
         "what are the payment methods",
         "payment methods",
-        "can i pay with",
         "how can i pay?"
       ],
       "responses": [
-        "We accept VISA, Mastercard, Paypal and Bit",
-        "We accept most major credit cards, and Paypal"
+        "We only accept VISA, Mastercard, Paypal and Bit",
+        "We accept most major credit cards, and Paypal, not cash"
       ]
     },
     {
@@ -115,42 +119,20 @@
         "How long does delivery take?",
         "How long does shipping take?",
         "When do I get my delivery?",
+        "delivery time",
+        "what is delivery",
         "When will my item arrive?"
       ],
       "responses": [
-        "Delivery takes 0.5-1 hours",
-        "Shipping usually takes between half an hour to an hour from approval"
-      ]
-    },
-    {
-      "tag": "funny",
-      "patterns": [
-        "Tell me a joke!",
-        "Tell me something funny!",
-        "Do you know a joke?",
-        "Joke",
-        "Are you funny?",
-        "Can you tell me a joke?",
-        "Can you say something funny?",
-        "funny"
-      ],
-      "responses": [
-        "To the guy who invented zero, thanks for nothing.",
-        "Why did Adele cross the road? To say hello from the other side.",
-        "I had a crazy dream last night! I was swimming in an ocean of orange soda. Turns out it was just a Fanta sea.",
-        "What was Forrest Gump’s email password? 1forrest1",
-        "I knew a guy who collected candy canes, they were all in mint condition.",
-        "How does Moses make coffee? Hebrews it.",
-        "Coffee has a rough time in our house. It gets mugged every single morning!",
-        "My parents said I can not drink coffee anymore. Or else they will ground me!"
+        "Delivery takes 1-5 days",
+        "Shipping usually takes between 1-5 days from approval"
       ]
     },
     {
       "tag": "tracking",
       "patterns": [
-        "Where is my coffee?",
+        "Where is my package?",
         "When will my order arrive?",
-        "Can you tell me where is my order?",
         "Where is my order?",
         "Do you provide tracking information",
         "Tracking info",
@@ -160,10 +142,11 @@
         "track",
         "trace my order",
         "Wehere is my item",
-        "my item"
+        "my item",
+        "my package never arrived"
       ],
       "responses": [
-        "Sorry we dont provide any tracking information at this time please contact us using the phone number : 050-xxx-xxxx"
+        "Sorry we dont provide any tracking information at this time. please contact us using the phone number : 050-1234567"
       ]
     },
     {
@@ -173,17 +156,19 @@
         "info",
         "more information",
         "who are you",
-        "tell me a story",
         "who are you guys",
         "more info",
-        "can i have more information about you"
+        "can i have more information about you",
+        "website",
+        "do you have a website",
+        "about you"
       ],
       "responses": [
-        "We are Adva & Guy and we love coffee very much \n we gained a coffee lovers community and we want to give them the best experience that we can.\n We have friends in Colombia and Ethiopia that sends us some coffee beans that came stright from their farm. \n Hope youll enjoy our passion of coffee as we do. \n\n G&A Coffee Roasters"
+        "We are Game4You, founded by Noa and Karin. \n we love games and we are excited to supply fum games to others \n you can visit our website Game4You.com ! \n make sure you visit out About page :-)"
       ]
     },
     {
-      "tag": "curses",
+      "tag": "mean",
       "patterns": [
         "son of a bitch",
         "bitch",
@@ -195,10 +180,13 @@
         "fucker",
         "fuck you",
         "fuck",
-        "son of a bitch"
+        "son of a bitch",
+        "you suck",
+        "suck",
+        "crap"
       ],
       "responses": [
-        "Sorry but we dont allow this kind of language in our site, please if your not satisfied with our service please call the number 050-xxx-xxxx if you want to resolve your problem."
+        "Please watch your language."
       ]
     }
   ]
