@@ -7,6 +7,7 @@ from torch.utils.data import Dataset, DataLoader
 from main import bag_of_words, tokenize, stem
 from model import NeuralNet
 
+
 with open('intents.json', 'r') as f:
     intents = json.load(f)
 
@@ -24,17 +25,17 @@ for intent in intents['intents']:
     # for each pattern in the specific tag
     for pattern in intent['patterns']:
         # tokenize each word in sentence
-        temp_word = tokenize(pattern)
+        w = tokenize(pattern)
         # add to our words list
-        all_words.extend(temp_word)
+        all_words.extend(w)
         # add to xy as a pair
-        xy.append((temp_word, tag))
+        xy.append((w, tag))
 
 # stem and lower each word
 ignore_chars = ['?', '.', '!']
 all_words = [stem(w) for w in all_words if w not in ignore_chars]
 
-# remove duplicates and sort array
+# remove duplicates and sort
 all_words = sorted(set(all_words))
 tags = sorted(set(tags))
 
@@ -87,17 +88,19 @@ class ChatTrainDataset(Dataset):
         self.x_data = X_train
         self.y_data = y_train
 
-    def __getItem__(self, index):
+    def __getitem__(self, index):
         return self.x_data[index], self.y_data[index]
 
-    # returns the size
+    # return size
     def __len__(self):
         return self.n_samples
 
 
 dataset = ChatTrainDataset()
-train_loader = DataLoader(
-    dataset=dataset, batch_size=batch_size, shuffle=True, num_workers=0)
+train_loader = DataLoader(dataset=dataset,
+                          batch_size=batch_size,
+                          shuffle=True,
+                          num_workers=0)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -107,7 +110,9 @@ model = NeuralNet(input_size, hidden_size, output_size)
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
+
 ###################################### Train the model ######################################
+
 for epoch in range(num_epochs):
     for (words, labels) in train_loader:
         words = words.to(device)
@@ -167,8 +172,7 @@ for x in x_test:
     y_pred.append(pred)
 
 
-# 1 = true positive     |      0 = false positive
-hitmark = [0] * (len(y_pred))
+hitmark = [0] * (len(y_pred))  # 1 = true positive    |    0 = false positive
 TP_counter = 0
 for x in range(len(y_pred)):
     real_ans = xy_test[x]

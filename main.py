@@ -1,4 +1,6 @@
 import nltk
+# The 'punkt' shpuld be downloaded once, afterwards hust apply the hash
+# nltk.download('punkt')
 from nltk.stem.porter import PorterStemmer
 import numpy as np
 stemmer = PorterStemmer()
@@ -15,7 +17,7 @@ def stem(word):
 def bag_of_words(tokenized_sentence, words):
     # first, stem each word
     sentence_words = [stem(word) for word in tokenized_sentence]
-    # then, initialize bag of words with 0 for each word
+    # then, initialize bag with 0 for each word
     bag = np.zeros(len(words), dtype=np.float32)
     for idx, w in enumerate(words):
         if w in sentence_words:
@@ -26,20 +28,20 @@ def bag_of_words(tokenized_sentence, words):
 
 ################################# Validate the tokenizing #################################
 """
-a = "Hello world!"
+a = "Hello World!"
 print(a)
 a = tokenize(a)
 print(a)
 """
 
-################################# Validate the stemming #################################
+# Check that the stemming works: ###########################################
 """
-words = ['Star', 'staring', 'starry']
+words = ['Universe', 'university', 'universal']
 stemmed_words = [stem(w) for w in words]
 print(stemmed_words)
 """
 
-################################# Validate the bag_of_words #################################
+# Check that the bag_of_words works: ###########################################
 """
 sentence = ["hello", "how", "are","you"]
 words = ["hi", "hello", "I", "you","bye", "thank", "cool"]
