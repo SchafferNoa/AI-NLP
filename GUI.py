@@ -2,11 +2,11 @@ from tkinter import *
 from tkinter import font
 from chat import get_response, bot_name
 
-BG_GREY = "#ABB2B9"
-BG_COLOR = "#17202A"
-TEXT_COLOR = "#EAECEE"
-FONT = "Arial 14"
-FONT_BOLD = "Arial 13 bold"
+BG = "#DFD3D3"
+BG_TEXT = "#B8B0B0"
+FONT_COLOR = "#040303"
+FONT = "Clibri 14"
+FONTB = "Calibri 13 bold"
 
 
 class ChatGui:
@@ -20,20 +20,20 @@ class ChatGui:
     def _set_gui(self):
         self.window.title("Chat with Game4You")
         self.window.resizable(width=False, height=False)
-        self.window.configure(width=400, height=550, bg=BG_COLOR)
+        self.window.configure(width=400, height=550, bg=BG_TEXT)
 
         # Chat header
-        chat_header = Label(self.window, bg=BG_COLOR, fg=TEXT_COLOR,
-                            text="Talk to us", font=FONT_BOLD, pady=10)
+        chat_header = Label(self.window, bg=BG_TEXT, fg=FONT_COLOR,
+                            text="Talk to us", font=FONTB, pady=10)
         chat_header.place(relwidth=1)
 
         # Line after header
-        line = Label(self.window, width=380, bg=BG_GREY)
+        line = Label(self.window, width=380, bg=BG)
         line.place(relwidth=1, rely=0.07, relheight=0.012)
 
         # Conversation area
         self.text_box = Text(self.window, width=20, height=2,
-                             bg=BG_COLOR, font=FONT, pady=5, padx=5, fg=TEXT_COLOR)
+                             bg=BG_TEXT, font=FONT, pady=5, padx=5, fg=FONT_COLOR)
         self.text_box.place(relheight=0.745, relwidth=1, rely=0.08)
         self.text_box.configure(cursor="arrow", state=DISABLED)
 
@@ -43,20 +43,20 @@ class ChatGui:
         scrollbar.configure(command=self.text_box.yview)
 
         # The div that contains unput box and send button
-        input_area = Label(self.window, bg=BG_GREY, height=80)
+        input_area = Label(self.window, bg=BG, height=80)
         input_area.place(relwidth=1, rely=0.825)
 
         # Input box
-        self.msg_box = Entry(input_area, bg="#2C3E50",
-                             fg=TEXT_COLOR, font=FONT)
+        self.msg_box = Entry(input_area, bg="#7C7575",
+                             fg=FONT_COLOR, font=FONT)
         self.msg_box.place(relwidth=.74, relheight=0.06,
                            rely=0.008, relx=0.011)
         self.msg_box.focus()
         self.msg_box.bind("<Return>", self._on_enter_pressed)
 
         # Send Button
-        send_button = Button(input_area, text="Send", font=FONT_BOLD,
-                             width=20, bg=BG_GREY, command=lambda: self._on_enter_pressed(None))
+        send_button = Button(input_area, text="Send", font=FONTB,
+                             width=20, bg=BG, command=lambda: self._on_enter_pressed(None))
         send_button.place(relx=0.77, rely=0.008, relheight=0.06, relwidth=0.22)
 
     # When user clicks ENTER key
